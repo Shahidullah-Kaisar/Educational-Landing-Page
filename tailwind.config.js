@@ -7,11 +7,15 @@ export default {
   theme: {
     screens: {
       sm: "340px",
-      md: "540",
-      lg: "768",
+      md: "540px",
+      lg: "768px",
       xl: "1180px"
     },
     extend: {},
+    fontFamily: {
+      Arima: ["Arima", "system-ui"],
+      Lobster: ["Lobster", "serif"]
+    },
     container: {
       center: true,
       padding: {

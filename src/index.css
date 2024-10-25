@@ -1,7 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lobster&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-green-950 text-white tracking-wider;
+  @apply bg-green-950 text-white tracking-wider font-Arima;
+}
+section{
+  @apply py-32 md:py-40
+}
+h1{
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+}
+h2 {
+  @apply text-2xl md:text-3xl xl:text-4xl;
+}
+h3 {
+  @apply text-xl md:text-2xl xl:text-3xl;
+}
+.title{
+  @apply text-yellow-500;
+}
+.nav-link {
+  @apply text-lg font-bold duration-500;
+}
+.nav-link:hover{
+  @apply text-yellow-500 duration-300
+}
+.btn {
+  @apply border border-yellow-500 bg-yellow-500 rounded-md px-5 py-2 duration-300;
+}
+.btn span {
+  @apply font-bold;
+}
+.btn:hover {
+  @apply opacity-90;
+}
+.btn_outline {
+  @apply bg-transparent;
+}
+.btn_outline:hover {
+  @apply bg-yellow-500;
+}
+.popular_card:hover img{
+  @apply -top-8
 }
