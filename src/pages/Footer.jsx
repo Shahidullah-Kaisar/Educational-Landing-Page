@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaFacebook, FaInstagramSquare, FaLeaf, FaLinkedinIn, FaTwitterSquare } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
 import flora from '../assets/flora.jpg'
 import { BiBook } from "react-icons/bi";
 import { FaComputer } from "react-icons/fa6";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Footer = () => {
+  
   return (
     <>
       <footer className="bg-yellow-100 text-green-950 pt-20 pb-10 md:pt-28 relative">
         <div className="container text-white absolute top-0 right-0 left-0 -translate-y-1/2">
-          <div className="bg-green-950 px-10 pt-5 pb-10 space-y-5 rounded-md">
+          <div className="bg-green-800 px-10 pt-5 pb-10 space-y-5 rounded-md">
             <h3>
               <span className="text-green-500">Subscribe</span> to our newsletter
             </h3>
@@ -95,6 +97,7 @@ const Footer = () => {
           {/* <img src={flora} alt="" className="w-full lg:w-1/2" /> */}
         </div>
       </footer>
+
     </>
   );
 };

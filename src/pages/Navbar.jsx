@@ -20,12 +20,16 @@ const Navbar = () => {
     const handleScrollToCourses = () =>{
         document.getElementById('courses').scrollIntoView({behavior: 'smooth'}) 
     }
+    const handleScrollToContact = () =>{
+        document.getElementById('contact').scrollIntoView({behavior: 'smooth'}) 
+    }
     const navLinks = <>
+
         <li><NavLink to="/" className='nav-link' onClick={()=> {closeMenue(); handleScrollToHome()}}>Home</NavLink></li>
         <li><NavLink to="" className='nav-link' onClick={()=> {closeMenue(); handleScrollToAbout()}}>About</NavLink></li>
         <li><NavLink to="" className='nav-link' onClick={()=> {closeMenue(); handleScrollToCourses()}}>Courses</NavLink></li>
-        <li><NavLink to="" className='nav-link' onClick={()=> {closeMenue(); handleScrollToHome()}}>Reviews</NavLink></li>
-        <li><NavLink to="" className='nav-link' onClick={()=> {closeMenue(); handleScrollToHome()}}>Contact</NavLink></li>
+        <li><NavLink to="" className='nav-link' onClick={()=> {closeMenue(); handleScrollToContact()}}>Contact</NavLink></li>
+        <li><NavLink to='/login' className='nav-link'>Login</NavLink></li>
     </>
 
     

@@ -46,3 +46,19 @@ h3 {
 .popular_card:hover img{
   @apply -top-8
 }
+
+@keyframes border-gradient {
+  0% {
+    border-color: greenyellow; /* Start color */
+  }
+  50% {
+    border-color: yellowgreen; /* Mid color */
+  }
+  100% {
+    border-color: #a855f7; /* End color */
+  }
+}
+
+.animate-border-gradient {
+  animation: border-gradient 7s linear infinite;
+}

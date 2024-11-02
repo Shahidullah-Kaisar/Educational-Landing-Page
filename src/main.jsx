@@ -7,6 +7,9 @@ import {
 import './index.css'
 import Root from './layouts/Root';
 import Home from './pages/Home';
+import AuthProvider from './providers/AuthProvider';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -17,12 +20,22 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )

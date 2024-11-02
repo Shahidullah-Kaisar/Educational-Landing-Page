@@ -4,6 +4,7 @@ import { IoMdEye } from "react-icons/io";
 import hero1 from '../assets/hero1.svg'
 import About from "./About";
 import Courses from "./Courses";
+import Contact from "./Contact";
 
 const Home = () => {
   return (
@@ -60,6 +61,7 @@ const Home = () => {
       </section>
       <About></About>
       <Courses></Courses>
+      <Contact></Contact>
     </>
   );
 };

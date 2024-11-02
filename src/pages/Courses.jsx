@@ -10,7 +10,7 @@ const Courses = () => {
   return (
     <>
       <section className="bg-green-900 -mt-10" id="courses">
-        <div className="flex flex-col items-center gap-3 text-center mb-44 -mt-16">
+        <div className="flex flex-col items-center gap-3 text-center mb-44 sm:-mt-10  lg:-mt-16">
           <h2 className="title">Our Courses</h2>
           <p className="max-w-2xl">Follow instruction for more</p>
         </div>
