@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import AuthProvider from './providers/AuthProvider';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AddCourse from './pages/AddCourse';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/addCourse",
+        element: <AddCourse></AddCourse>,
       },
     ],
   },

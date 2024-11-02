@@ -3,15 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Handle login logic here
-    console.log("Logging in with", email, password);
-  };
-
+  
   return (
     <>
       <div className="container flex items-center justify-center min-h-screen relative overflow-hidden">
@@ -24,7 +16,7 @@ const Login = () => {
           <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
             Login
           </h2>
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form className="space-y-6">
             <div>
               <label
                 htmlFor="email"
@@ -35,8 +27,6 @@ const Login = () => {
               <input
                 type="email"
                 id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 className="w-full text-black bg-gray-400 px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none "
                 required
               />
@@ -51,8 +41,6 @@ const Login = () => {
               <input
                 type="password"
                 id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 className="w-full text-black bg-gray-400  px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none "
                 required
               />

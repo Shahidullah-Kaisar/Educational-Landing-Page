@@ -25,7 +25,7 @@ const Courses = () => {
             />
             
             <h3>Web Development</h3>
-            <p>Nephrolepis exaltata</p>
+            <p>Grow Your Knowledge</p>
 
             <div className="flex gap-1 text-yellow-500 text-xs py-3">
               <IoIosStar />
@@ -50,7 +50,7 @@ const Courses = () => {
             />
             
             <h3>App Development</h3>
-            <p>Nephrolepis exaltata</p>
+            <p>Grow Your Knowledge</p>
 
             <div className="flex gap-1 text-yellow-500 text-xs py-3">
               <IoIosStar />
@@ -75,7 +75,7 @@ const Courses = () => {
             />
             
             <h3>Graphic Designer</h3>
-            <p>Nephrolepis exaltata</p>
+            <p>Grow Your Knowledge</p>
 
             <div className="flex gap-1 text-yellow-500 text-xs py-3">
               <IoIosStar />
@@ -100,7 +100,7 @@ const Courses = () => {
             />
             
             <h3>Digital Marketing</h3>
-            <p>Nephrolepis exaltata</p>
+            <p>Grow Your Knowledge</p>
 
             <div className="flex gap-1 text-yellow-500 text-xs py-3">
               <IoIosStar />
