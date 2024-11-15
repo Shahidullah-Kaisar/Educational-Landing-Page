@@ -1,7 +1,38 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
+
+    const {createRegisterUser} = useContext(AuthContext)
+    console.log(createRegisterUser);
+
+    const handleRegister = (e) => {
+      e.preventDefault();
+
+      const name = e.target.name.value;
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+      console.log(name,email,password);
+
+      createRegisterUser(email,password)
+      .then((result) =>{
+        console.log(result.user);
+        e.target.reset();
+        
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Registratioin Successfull",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      })
+      .catch((error) =>{
+        console.log(error);
+      })
+    }
 
     return (
         <div className="container flex items-center justify-center min-h-screen relative overflow-hidden">
@@ -11,20 +42,21 @@ const Register = () => {
           {/* Border Animation */}
           <div className="absolute inset-0 rounded-lg border-4 border-transparent animate-border-gradient pointer-events-none"></div>
 
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+          <h2 className="text-2xl font-bold text-center text-white mb-6">
             Register
           </h2>
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleRegister}>
           <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-white"
               >
                 Name
               </label>
               <input
                 type="text"
                 id="name"
+                name='name'
                 className="w-full text-black bg-gray-400 px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none "
                 required
               />
@@ -32,13 +64,14 @@ const Register = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-white"
               >
                 Email
               </label>
               <input
                 type="email"
                 id="email"
+                name='email'
                 className="w-full text-black bg-gray-400 px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none "
                 required
               />
@@ -46,13 +79,14 @@ const Register = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-white"
               >
                 Password
               </label>
               <input
                 type="password"
                 id="password"
+                name='password'
                 className="w-full text-black bg-gray-400  px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none "
                 required
               />
