@@ -1,9 +1,22 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Navbar = () => {
+
+    const {user,userSignOut} = useContext(AuthContext);
+    console.log("my data",user);
+
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const handleSignOut = () =>{
+        userSignOut()
+        .then(()=>console.log('user signout'))
+        .catch((error)=>{
+            console.log(error);
+        })
+    }
 
     const handleMenu = () =>{
         setMenuOpen(!menuOpen);
@@ -29,7 +42,14 @@ const Navbar = () => {
         <li><NavLink to="" className='nav-link' onClick={()=> {closeMenue(); handleScrollToAbout()}}>About</NavLink></li>
         <li><NavLink to="" className='nav-link' onClick={()=> {closeMenue(); handleScrollToCourses()}}>Courses</NavLink></li>
         <li><NavLink to="" className='nav-link' onClick={()=> {closeMenue(); handleScrollToContact()}}>Contact</NavLink></li>
-        <li><NavLink to='/login' className='nav-link'>Login</NavLink></li>
+        {/* <li><NavLink to='/login' className='nav-link' onClick={closeMenue}>Login</NavLink></li> */}
+        {
+            user && user.emailVerified ? (<li><NavLink to='' className='nav-link' onClick={ ()=> {handleSignOut();closeMenue();}}>Logout</NavLink></li>) : (<li><NavLink to='/login' className='nav-link' onClick={closeMenue}>Login</NavLink></li>)
+        }
+        {
+            user && user.emailVerified ? (user.displayName): ""
+        }
+        
     </>
 
     

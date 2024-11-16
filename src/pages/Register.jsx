@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { sendEmailVerification, updateProfile } from 'firebase/auth';
 
 const Register = () => {
 
@@ -28,7 +29,23 @@ const Register = () => {
           showConfirmButton: false,
           timer: 2000,
         });
+
+        updateProfile(result.user,{
+          displayName:name,
+        })
+        .then( ()=>{
+          console.log('Profile Updated')
+        })
+        .catch((error)=>{
+          console.log(error);
+        })
+
+        sendEmailVerification(result.user)
+        .then( ()=>{
+          alert('Please Check Your Email and Verify Your Account')
+        })
       })
+      
       .catch((error) =>{
         console.log(error);
       })

@@ -24,7 +24,7 @@ const Login = () => {
       console.log(result.user)
       e.target.reset();
 
-      if(result.user){
+      if(result.user.emailVerified){
         toast.success("Login Successfull");
 
         setTimeout(() => {
